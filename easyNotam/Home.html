@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+    var _rollbarConfig = {
+      "accessToken": "649a7c1441b04cc68b201c8912b63e8b",
+      "captureUncaught": true,
+      "payload": {
+        "environment": "production"
+      }
+    };
+  </script>
+  <script type="text/javascript">
+    !function(r) {
+      function e(t) {
+        if (o[t])
+          return o[t].exports;
+        var n = o[t] = {
+          exports: {},
+          id: t,
+          loaded: !1
+        };
+        return r[t].call(n.exports, n, n.exports, e),
+          n.loaded = !0,
+          n.exports
+      }
+      var o = {};
+      return e.m = r,
+        e.c = o,
+        e.p = "",
+        e(0)
+    }([function(r, e, o) {
+      "use strict";
+      var t = o(1).Rollbar
+        , n = o(2);
+      _rollbarConfig.rollbarJsUrl = _rollbarConfig.rollbarJsUrl || "https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";
+      var a = t.init(window, _rollbarConfig)
+        , i = n(a, _rollbarConfig);
+      a.loadFull(window, document, !_rollbarConfig.async, _rollbarConfig, i)
+    }
+      , function(r, e) {
+        "use strict";
+        function o(r) {
+          return function() {
+            try {
+              return r.apply(this, arguments)
+            } catch (e) {
+              try {
+                console.error("[Rollbar]: Internal error", e)
+              } catch (o) {}
+            }
+          }
+        }
+        function t(r, e, o) {
+          window._rollbarWrappedError && (o[4] || (o[4] = window._rollbarWrappedError),
+          o[5] || (o[5] = window._rollbarWrappedError._rollbarContext),
+            window._rollbarWrappedError = null),
+            r.uncaughtError.apply(r, o),
+          e && e.apply(window, o)
+        }
+        function n(r) {
+          var e = function() {
+            var e = Array.prototype.slice.call(arguments, 0);
+            t(r, r._rollbarOldOnError, e)
+          };
+          return e.belongsToShim = !0,
+            e
+        }
+        function a(r) {
+          this.shimId = ++c,
+            this.notifier = null,
+            this.parentShim = r,
+            this._rollbarOldOnError = null
+        }
+        function i(r) {
+          var e = a;
+          return o(function() {
+            if (this.notifier)
+              return this.notifier[r].apply(this.notifier, arguments);
+            var o = this
+              , t = "scope" === r;
+            t && (o = new e(this));
+            var n = Array.prototype.slice.call(arguments, 0)
+              , a = {
+              shim: o,
+              method: r,
+              args: n,
+              ts: new Date
+            };
+            return window._rollbarShimQueue.push(a),
+              t ? o : void 0
+          })
+        }
+        function l(r, e) {
+          if (e.hasOwnProperty && e.hasOwnProperty("addEventListener")) {
+            var o = e.addEventListener;
+            e.addEventListener = function(e, t, n) {
+              o.call(this, e, r.wrap(t), n)
+            }
+            ;
+            var t = e.removeEventListener;
+            e.removeEventListener = function(r, e, o) {
+              t.call(this, r, e && e._wrapped ? e._wrapped : e, o)
+            }
+          }
+        }
+        var c = 0;
+        a.init = function(r, e) {
+          var t = e.globalAlias || "Rollbar";
+          if ("object" == typeof r[t])
+            return r[t];
+          r._rollbarShimQueue = [],
+            r._rollbarWrappedError = null,
+            e = e || {};
+          var i = new a;
+          return o(function() {
+            if (i.configure(e),
+              e.captureUncaught) {
+              i._rollbarOldOnError = r.onerror,
+                r.onerror = n(i);
+              var o, a, c = "EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");
+              for (o = 0; o < c.length; ++o)
+                a = c[o],
+                r[a] && r[a].prototype && l(i, r[a].prototype)
+            }
+            return e.captureUnhandledRejections && (i._unhandledRejectionHandler = function(r) {
+              var e = r.reason
+                , o = r.promise
+                , t = r.detail;
+              !e && t && (e = t.reason,
+                o = t.promise),
+                i.unhandledRejection(e, o)
+            }
+              ,
+              r.addEventListener("unhandledrejection", i._unhandledRejectionHandler)),
+              r[t] = i,
+              i
+          })()
+        }
+          ,
+          a.prototype.loadFull = function(r, e, t, n, a) {
+            var i = function() {
+              var e;
+              if (void 0 === r._rollbarPayloadQueue) {
+                var o, t, n, i;
+                for (e = new Error("rollbar.js did not load"); o = r._rollbarShimQueue.shift(); )
+                  for (n = o.args,
+                         i = 0; i < n.length; ++i)
+                    if (t = n[i],
+                    "function" == typeof t) {
+                      t(e);
+                      break
+                    }
+              }
+              "function" == typeof a && a(e)
+            }
+              , l = !1
+              , c = e.createElement("script")
+              , d = e.getElementsByTagName("script")[0]
+              , p = d.parentNode;
+            c.crossOrigin = "",
+              c.src = n.rollbarJsUrl,
+              c.async = !t,
+              c.onload = c.onreadystatechange = o(function() {
+                if (!(l || this.readyState && "loaded" !== this.readyState && "complete" !== this.readyState)) {
+                  c.onload = c.onreadystatechange = null;
+                  try {
+                    p.removeChild(c)
+                  } catch (r) {}
+                  l = !0,
+                    i()
+                }
+              }),
+              p.insertBefore(c, d)
+          }
+          ,
+          a.prototype.wrap = function(r, e) {
+            try {
+              var o;
+              if (o = "function" == typeof e ? e : function() {
+                return e || {}
+              }
+                ,
+              "function" != typeof r)
+                return r;
+              if (r._isWrap)
+                return r;
+              if (!r._wrapped) {
+                r._wrapped = function() {
+                  try {
+                    return r.apply(this, arguments)
+                  } catch (e) {
+                    throw e._rollbarContext = o() || {},
+                      e._rollbarContext._wrappedSource = r.toString(),
+                      window._rollbarWrappedError = e,
+                      e
+                  }
+                }
+                  ,
+                  r._wrapped._isWrap = !0;
+                for (var t in r)
+                  r.hasOwnProperty(t) && (r._wrapped[t] = r[t])
+              }
+              return r._wrapped
+            } catch (n) {
+              return r
+            }
+          }
+        ;
+        for (var d = "log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","), p = 0; p < d.length; ++p)
+          a.prototype[d[p]] = i(d[p]);
+        r.exports = {
+          Rollbar: a,
+          _rollbarWindowOnError: t
+        }
+      }
+      , function(r, e) {
+        "use strict";
+        r.exports = function(r, e) {
+          return function(o) {
+            if (!o && !window._rollbarInitialized) {
+              var t = window.RollbarNotifier
+                , n = e || {}
+                , a = n.globalAlias || "Rollbar"
+                , i = window.Rollbar.init(n, r);
+              i._processShimQueue(window._rollbarShimQueue || []),
+                window[a] = i,
+                window._rollbarInitialized = !0,
+                t.processPayloads()
+            }
+          }
+        }
+      }
+    ]);
+  </script>
+  <title>Blockchain technologies, Blockchain startups, Cryptocurrency and Smart Contracts Development</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="Cryptocurrency and Smart Contracts Development">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Icons - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ·-->
+  <link href='https://blockchain.evrone.com/images/favicon.ico' rel='icon' type='image/x-icon'>
+  <link href='https://blockchain.evrone.com/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+  <link href='https://blockchain.evrone.com/images/favicon.png' rel='shortcut icon' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon.png' rel='apple-touch-icon'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
+  <link href='https://blockchain.evrone.com/images/apple-touch-icon-180x180.png' rel='apple-touch-icon' sizes='180x180'>
+  <link href='https://blockchain.evrone.com/images/android-chrome-36x36.png' rel='icon' sizes='36x36' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/android-chrome-48x48.png' rel='icon' sizes='48x48' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/android-chrome-72x72.png' rel='icon' sizes='72x72' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/android-chrome-96x96.png' rel='icon' sizes='96x96' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/android-chrome-144x144.png' rel='icon' sizes='144x144' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/android-chrome-192x192.png' rel='icon' sizes='192x192' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+  <link href='https://blockchain.evrone.com/images/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'>
+  <link rel="stylesheet" media="all" href="/assets/blockchain-49f997db418f9fe348a20cc72d56013d627fd9baf08838aae66eb7e6c9dff18f.css" data-turbolinks-track="true"/>
+  <script src="/assets/blockchain-5cded720a926f6738547587602467d5357615e0eb39c53527504816ab7d640e4.js" data-turbolinks-track="true"></script>
+</head>
+<body>
+<div class='l-header js-header-menu' data-track-block='header'>
+  <div class='l-header__container'>
+    <a class="l-header__logo l-header__logo__image" data-track-click="header-link-to-homepage" data-locale="en" data-host="blockchain.evrone.com" data-landing="landing" href="https://evrone.com/"></a>
+    <div class='img_menu js-header-menu-button close'>
+      <span></span>
+      <span class='removed'></span>
+      <span></span>
+    </div>
+    <div class='l-header__menu'>
+      <div class='img_menu_pseudo'></div>
+      <a class="l-header__locale" data-track-click="click_change_ru_locale" href="https://blockchain.evrone.ru/">ru</a>
+      <a class="l-header__menu__link about" data-track-click="header-link-to-about" data-locale="en" data-host="blockchain.evrone.com" data-landing="landing" href="https://evrone.com/about">about</a>
+      <a class="l-header__menu__link career" target="_blank" data-track-click="header-link-to-career" data-locale="en" data-host="blockchain.evrone.com" data-landing="landing" href="https://jobs.evrone.com/">career</a>
+      <a class="l-header__menu__link js-scroll-to contacts" data-target=".js-contacts-target" data-track-click="header-link-to-contacts" data-locale="en" data-host="blockchain.evrone.com" data-landing="landing" href="javascript:;">contacts</a>
+    </div>
+  </div>
+</div>
+<div id="content" role="main">
+  <div class='b-top-block' id='particle'>
+    <div class="b-top-block_content" id='intro'>
+      <div class="b-top-block__logo"></div>
+      <h1>
+        Blockchain <br>technologies
+      </h1>
+      <p>
+        Blockchain startups, Cryptocurrency <br>and Smart Contracts Development
+      </p>
+    </div>
+    <a class="b-welcome__next js-scroll-to" data-target=".blockchain_description" data-track-click="click_scroll_down_hint" href="javascript:;" style="display: inline;"></a>
+  </div>
+  <div class="blockchain_description" id="blockchain_description">
+    <div class="blockchain_description__content">
+      <h3>
+        We are engineering team, <span class='marker'>specialized in developing </span>
+        <span class='marker'>Cryptocurrency, FinTech and Blockchain services.</span>
+        The company designs and develops blockchain powered solutions in banking, financial, and other industries. We know all about cryptocurrency from mining to trading.
+      </h3>
+    </div>
+  </div>
+  <div class='b-services'>
+    <div class='b-services__card container'>
+      <h2>Our services</h2>
+      <!-- Row-1----------- -->
+      <div class="row  scrollme">
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="00" data-opacity="0" data-translatey="200">
+          <div class="loan_data_sharing"></div>
+          <h3>Blockchain startups</h3>
+          <p>Launch all of your great ideas.</p>
+        </div>
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="exchanges"></div>
+          <h3>Exchanges</h3>
+          <p>Buy, sell and store crypto coins.</p>
+        </div>
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="private_blockchain"></div>
+          <h3>Private blockchain </h3>
+          <p>For public and research organizations.</p>
+        </div>
+      </div>
+      <!-- Row-2----------- -->
+      <div class="row scrollme">
+        <div class="card col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="smart_contracts"></div>
+          <h3>Smart contracts</h3>
+          <p>Ethereum blockchain platform.</p>
+        </div>
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="supply_chain"></div>
+          <h3>Mining consulting</h3>
+          <p>Build your farm and make money.</p>
+        </div>
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="wallets"></div>
+          <h3>Wallets</h3>
+          <p>Exclusive wallet for your coins.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='b-clients'>
+    <div class='b-clients__card  container'>
+      <h2>Our clients</h2>
+      <!-- Row-2----------- -->
+      <div class="row scrollme">
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="cryptopay"></div>
+          <h3>
+            <a href="https://cryptopay.me/" target='_blank'>cryptopay.me</a>
+          </h3>
+          <p>Transfer, exchange and send your money all &nbsp;over &nbsp;the &nbsp;world.</p>
+        </div>
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="adara"></div>
+          <h3>
+            <a href="http://adara.io/" target='_blank'>adara.io</a>
+          </h3>
+          <p>The guide to the world of digital economy.</p>
+        </div>
+        <div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="humaniq"></div>
+          <h3>
+            <a href="https://humaniq.com/" target='_blank'>humaniq.com</a>
+          </h3>
+          <p>Humaniq is a simple and secure 4th &nbsp;generation mobile &nbsp;bank.</p>
+        </div>
+        <!--<div class="card  col-xs-12 col-sm-4 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">-->
+        <!--<div class="soundchain"></div>-->
+        <!--<h3><a href="http://soundchain.org/" target='_blank'>soundchain.org</a></h3>-->
+        <!--<p>Distributed opensource database for managing intellectual property rights.</p>-->
+        <!--</div>-->
+      </div>
+    </div>
+  </div>
+  <div class='b-clients'>
+    <div class='b-clients__card  container'>
+      <h2>Our projects</h2>
+      <!-- Row-2----------- -->
+      <div class="row scrollme">
+        <div class="card col-xs-12 col-sm-6 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="hypecodes"></div>
+          <h3>
+            <a href="https://hype.codes/" target='_blank'>hype.codes</a>
+          </h3>
+          <p>Portal about blockchain technologies, ICO,&nbsp;crypto &nbsp;exchange &nbsp;markets.</p>
+        </div>
+        <div class="card col-xs-12 col-sm-6 animateme" data-when="enter" data-from="0.6" data-to="0" data-opacity="0" data-translatey="200">
+          <div class="crypton"></div>
+          <h3>
+            <a href="https://crypton.trading/" target='_blank'>crypton.trading</a>
+          </h3>
+          <p>A cryptocurrency trading bot based on machine learning.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='b-facts'>
+    <h2>Experiments</h2>
+    <div class='b-facts__card'>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_content">
+                <h3>trading bots</h3>
+                <p>We developed cryptocurrency trading bot based &nbsp;on machine learning analytic system</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_content">
+                <h3>evroneum</h3>
+                <p>We made ethereum blockchain platform fork and &nbsp;evroneum wallet</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_content">
+                <h3>mining farms</h3>
+                <p>We construct mining farm with over 1.5 GH/s for &nbsp;explore this area.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FOOTER - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ·-->
+<div class="footer" data-track-block="footer">
+  <div class='footer_contects'>
+    <h2>CONTACTS</h2>
+    <p>We work with public and research organizations and help them implement complex and
+      nonstandard projects.</p>
+    <div class='row'>
+      <div class='b-contact col-xs-12 col-sm-6 '>
+        <div class='email_pict'></div>
+        <div class="email" data-track-click="click_mail">
+          <a href="mailto:mail@evrone.com">mail@evrone.com</a>
+        </div>
+        <p>send us an email</p>
+      </div>
+      <div class='b-contact col-xs-12 col-sm-6 '>
+        <div class='phone_pict'></div>
+        <div class="phone" data-track-click="click_phone">
+          <a href="tel:+1-415-299-48-83">USA: +1 (415) 299-48-83</a>
+        </div>
+        <div class="phone" data-track-click="click_phone">
+          <a href="tel:+49-176-24514399‬">EU: +49 176 24514399‬‬</a>
+        </div>
+        <p>or call us</p>
+      </div>
+    </div>
+    <div class='row address'>
+      <div class='address_de  col-xs-12 col-sm-3'>
+        Kemperplatz 1,<br/>10785 Berlin
+
+      </div>
+      <div class='address_us  col-xs-12 col-sm-3'>
+        28 2nd St. 3rd Floor<br>San Francisco, CA 94104
+
+      </div>
+      <div class='address_moscow  col-xs-12 col-sm-3'>
+        6/2 Presnenskaya emb.,<br>Moscow, Russia, 123317
+
+      </div>
+      <div class='address_voronezh  col-xs-12 col-sm-3'>
+        5 Korolenko,<br>Voronezh, Russia, 394036
+
+      </div>
+    </div>
+  </div>
+  <div class="footer__social">
+    <div class="product_by">
+      <span>© 2008–2019</span>
+      <a data-track-click="click_evrone" href="http://evrone.com">EVRONE</a>
+    </div>
+    <div class="social">
+      <!-- noindex -->
+      <a class="icon fb" target="_blank" data-track-click="click_facebook" href="https://www.facebook.com/evrone">
+        <span class="hidden">Facebook</span>
+      </a>
+      <a class="icon twitter" target="_blank" data-track-click="click_twitter" href="https://twitter.com/evronecom">
+        <span class="hidden">Twitter</span>
+      </a>
+      <a class="icon github" target="_blank" data-track-click="click_github" href="https://github.com/evrone">
+        <span class="hidden">Github</span>
+      </a>
+      <a class="icon dribbble" target="_blank" data-track-click="click_dribbble" href="https://dribbble.com/Evrone">
+        <span class="hidden">Dribbble</span>
+      </a>
+      <a class="icon behance" target="_blank" data-track-click="click_behance" href="https://www.behance.net/evronedesign">
+        <span class="hidden">Behance</span>
+      </a>
+      <a class="icon linkedin" target="_blank" data-track-click="click_linkedin" href="https://www.linkedin.com/company/evrone">
+        <span class="hidden">Linkedin</span>
+      </a>
+      <a class="icon vimeo" target="_blank" data-track-click="click_vimeo" href="https://vimeo.com/evrone">
+        <span class="hidden">Vimeo</span>
+      </a>
+      <!-- /noindex -->
+    </div>
+  </div>
+</div>
+<!-- End Document-->
+<!-- GLOBAL SCRIPTS - - - - - - - - - - - - - - - - - - - - - - - - ·-->
+</body>
+</html>
