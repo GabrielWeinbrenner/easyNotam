@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>easyNotam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
+        integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css" />
+    <script>
+        $(document)
+            .ready(function () {
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    })
+                    ;
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item')
+                    ;
+
+            })
+            ;
+    </script>
+</head>
+
+<body class="pushable">
+    <div class="ui large top fixed menu transition hidden">
+        <div class="ui container">
+            <a class="item">Home</a>
+            <a class="item">About</a>
+            <a class="item">Pricing</a>
+            <a class="item">Contact</a>
+        </div>
+    </div>
+    <div class="ui vertical inverted sidebar menu left">
+        <a class="item">Home</a>
+        <a class="item">About</a>
+        <a class="item">Pricing</a>
+        <a class="item">Contact</a>
+
+    </div>
+
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="red ui inverted vertical masthead center aligned segment">
+
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="item">Home</a>
+                    <a class="item">About</a>
+                    <a class="item">Pricing</a>
+                    <a class="item">Contact</a>
+                </div>
+            </div>
+
+            <div class="ui text container">
+                <img src="assets/images/logo_transparent.png" class="ui centered large image">
+                <h2>Designing websites for local businesses</h2>
+            </div>
+
+        </div>
+
+        <div class="ui vertical stripe segment">
+            <h1 class="ui center aligned header">About Us</h1>
+            <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                    <div class="eight wide column">
+                        <h3 class="ui header">We Help Local Businesses</h3>
+                        <p>Through the use of <b>Website Design, SEO marketing</b>, <b>Social Media</b> our services are made to
+                            help
+                            out every local business in need of gaining the technological edge.</p>
+                        <h3 class="ui header">We Are a Group of Passionate Web Developers</h3>
+                        <p>Web development, Marketing, and Amazing Service, we have it all. For further information contact us with the button below.</p>
+                    </div>
+                    <div class="six wide right floated column">
+                        <img src="assets/images/logo.png" class="ui large bordered rounded image">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center aligned column">
+                        <a class="ui huge button">Contact us for more information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui vertical stripe segment">
+            <h1 class="ui center aligned header">Past Experience</h1>
+            <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                    <div class="four wide column">
+                        <h2 class="ui header">
+                            <i class="plug circular icon"></i>
+                            <div class="content">
+                                Site #1
+                            </div>
+                        </h2>
+                    </div>
+                    <div class="four wide column">
+                        <h2 class="ui header">
+                            <i class="plug circular icon"></i>
+                            <div class="content">
+                                Site #2
+                            </div>
+                        </h2>
+                    </div>
+                    <div class="four wide column">
+                        <h2 class="ui header">
+                            <i class="plug circular icon"></i>
+                            <div class="content">
+                                Site #3
+                            </div>
+                        </h2>
+                    </div>
+                    <div class="four wide column">
+                        <h2 class="ui header">
+                            <i class="plug circular icon"></i>
+                            <div class="content">
+                                Site #4
+                            </div>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui inverted vertical footer segment">
+            <div class="ui container">
+                <div class="ui stackable inverted divided equal height stackable grid">
+                    <div class="three wide column">
+                        <h4 class="ui inverted header">About</h4>
+                        <div class="ui inverted link list">
+                            <a href="#" class="item">Sitemap</a>
+                            <a href="#" class="item">Contact Us</a>
+                            <a href="#" class="item">Religious Ceremonies</a>
+                            <a href="#" class="item">Gazebo Plans</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header">Services</h4>
+                        <div class="ui inverted link list">
+                            <a href="#" class="item">Website Design</a>
+                            <a href="#" class="item">SEO Optimization</a>
+                            <a href="#" class="item">Social Media Marketing</a>
+                        </div>
+                    </div>
+                    <div class="seven wide column">
+                        <h4 class="ui inverted header">Footer Header</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
