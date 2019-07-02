@@ -1,12 +1,18 @@
         .hidden.menu {
             display: none;
         }
+        .ui.menu {
+            margin: 0em;
+        }
 
         .masthead.segment {
             min-height: 700px;
-            padding: 1em 0em;
+            padding-bottom: 0em;
         }
-
+        .ui.segment {
+            padding-top: 0em;
+            padding-bottom: 2em;
+        }
         .masthead .logo.item img {
             margin-right: 1em;
         }
@@ -89,7 +95,6 @@
 
             .masthead h1.ui.header {
                 font-size: 2em;
-                margin-top: 1.5em;
             }
 
             .masthead h2 {
