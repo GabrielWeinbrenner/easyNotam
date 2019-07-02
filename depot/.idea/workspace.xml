@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="059298a5-46df-4962-b2e1-5b0720eed39b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Neat Free Website Template - Free-CSS.com/.idea/Neat Free Website Template - Free-CSS.com.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Neat Free Website Template - Free-CSS.com/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Neat Free Website Template - Free-CSS.com/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Neat Free Website Template - Free-CSS.com/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Official easyNotam/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Official easyNotam/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Official easyNotam/pricing.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/depot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/facebook_cover_photo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/facebook_cover_photo_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/facebook_profile_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/instagram_profile_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/linkedin_banner_image_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/linkedin_banner_image_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/linkedin_profile_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo_transparent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pinterest_board_photo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pinterest_profile_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/twitter_header_photo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/twitter_header_photo_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/twitter_profile_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/youtube_profile_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Official easyNotam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Official easyNotam/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="059298a5-46df-4962-b2e1-5b0720eed39b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -43,11 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/single.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="67" column="79" lean-forward="true" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+            <state relative-caret-position="204">
+              <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -66,8 +45,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1130" />
-    <option name="y" value="7" />
-    <option name="width" value="658" />
+    <option name="y" value="6" />
+    <option name="width" value="659" />
     <option name="height" value="795" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -77,34 +56,14 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="depot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="depot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="depot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="depot" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="depot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="depot" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../easyNotam" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -135,12 +94,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562036203758</updated>
-      <workItem from="1562036204858" duration="455000" />
+      <workItem from="1562036204858" duration="722000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="455000" />
+    <option name="totallyTimeSpent" value="722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
@@ -171,8 +130,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/single.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="67" column="79" lean-forward="true" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+        <state relative-caret-position="204">
+          <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
         </state>
       </provider>
     </entry>

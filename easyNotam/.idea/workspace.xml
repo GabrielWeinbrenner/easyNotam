@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8c94620-c47c-4b4b-ac5a-8688747010a7" name="Default Changelist" comment="" />
+    <list default="true" id="c8c94620-c47c-4b4b-ac5a-8688747010a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../depot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../depot/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,34 +14,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#16296#16302#0" expanded="true" />
-                <element signature="e#16307#16313#0" expanded="true" />
-                <element signature="e#16317#16323#0" expanded="true" />
-                <element signature="e#17035#17041#0" expanded="true" />
-                <element signature="e#17059#17065#0" expanded="true" />
-                <element signature="e#18033#18039#0" expanded="true" />
-                <element signature="e#18046#18052#0" expanded="true" />
-                <element signature="e#18061#18067#0" expanded="true" />
-                <element signature="e#18876#18882#0" expanded="true" />
-                <element signature="e#19187#19193#0" expanded="true" />
-                <element signature="e#19484#19490#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143497">
+            <state relative-caret-position="634">
               <caret line="8441" column="18" lean-forward="true" selection-start-line="8441" selection-start-column="18" selection-end-line="8441" selection-end-column="18" />
               <folding>
                 <element signature="e#3065#3323#2" expanded="true" />
@@ -79,15 +70,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="9428" selection-start-line="9428" selection-end-line="9428" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -98,6 +80,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -110,24 +95,36 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1130" />
-    <option name="y" value="7" />
-    <option name="width" value="658" />
+    <option name="y" value="6" />
+    <option name="width" value="659" />
     <option name="height" value="795" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="easyNotam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easyNotam" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Git/easyNotam" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Official easyNotam" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -165,22 +162,19 @@
       <option name="presentableId" value="Default" />
       <updated>1561859213043</updated>
       <workItem from="1561859215329" duration="2035000" />
+      <workItem from="1562036922704" duration="28000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2035000" />
+    <option name="totallyTimeSpent" value="2063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -188,6 +182,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -197,37 +195,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asset.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="9428" selection-start-line="9428" selection-end-line="9428" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#16296#16302#0" expanded="true" />
-            <element signature="e#16307#16313#0" expanded="true" />
-            <element signature="e#16317#16323#0" expanded="true" />
-            <element signature="e#17035#17041#0" expanded="true" />
-            <element signature="e#17059#17065#0" expanded="true" />
-            <element signature="e#18033#18039#0" expanded="true" />
-            <element signature="e#18046#18052#0" expanded="true" />
-            <element signature="e#18061#18067#0" expanded="true" />
-            <element signature="e#18876#18882#0" expanded="true" />
-            <element signature="e#19187#19193#0" expanded="true" />
-            <element signature="e#19484#19490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/asset.js" />
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143497">
+        <state relative-caret-position="634">
           <caret line="8441" column="18" lean-forward="true" selection-start-line="8441" selection-start-column="18" selection-end-line="8441" selection-end-column="18" />
           <folding>
             <element signature="e#3065#3323#2" expanded="true" />
@@ -262,6 +233,16 @@
             <element signature="e#270547#273610#2" expanded="true" />
             <element signature="e#273672#276543#2" expanded="true" />
             <element signature="e#288018#293919#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
